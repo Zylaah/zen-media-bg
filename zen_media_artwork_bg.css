@@ -1,0 +1,50 @@
+/* Zen Media Controls Artwork Background Styles */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#zen-media-controls-toolbar > toolbaritem {
+    position: relative; /* Needed for pseudo-element */
+    clip-path: inset(0 round var(--border-radius-medium)); /* Use clip-path for rounding */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Smooth transition for the background image */
+    /* transition: background-image 0.4s ease-in-out; /* Only transition background-image here */
+}
+
+/* Apply artwork background when hovering and the item has the 'has-artwork' class */
+#zen-media-controls-toolbar:hover > toolbaritem.has-artwork {
+    background-image: var(--zen-media-artwork-bg) !important; /* Keep important for now */
+}
+
+/* Overlay for readability, shown only when artwork is applied via the class */
+#zen-media-controls-toolbar:hover > toolbaritem.has-artwork::before {
+    /* Light mode: semi-transparent white overlay for readability */
+    /* Dark mode: increased overlay opacity for better text readability while still showing artwork */
+    background: light-dark(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    opacity: 1;
+    pointer-events: none; /* Never block pointer events */
+}
+
+/* Default state for the overlay pseudo-element */
+#zen-media-controls-toolbar > toolbaritem::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit; 
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none; /* Ignore pointer events when hidden */
+    /* Define transition once on the base pseudo-element */
+    /* transition: opacity 0.4s ease-in-out; */
+}
+
+/* Ensure toolbar content (buttons, text) stays above the overlay */
+#zen-media-controls-toolbar > toolbaritem > * {
+    position: relative; /* Needed to apply z-index */
+    z-index: 1;
+}
+
+
+
+
