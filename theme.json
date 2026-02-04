@@ -1,5 +1,5 @@
 {
-  "id": "urlbar-llm",
+  "id": "zen-media-bg",
   "homepage": "https://github.com/Zylaah/zen-media-bg",
   "name": "Zen Media BG",
   "description": "Adds the video thumbnail to the media player on hover.",
@@ -17,7 +17,7 @@
   ],
   "preferences": "preferences.json",
   "style": {
-    "chrome": "urlbar-llm.css"
+    "chrome": "zen_media_artwork_bg.css"
   },
   "scripts": {
     "zen_media_artwork_bg.uc.js": {
