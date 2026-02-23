@@ -21,7 +21,7 @@
 #zen-media-controls-toolbar:hover > toolbaritem.has-artwork::before {
     /* Light mode: semi-transparent white overlay for readability */
     /* Dark mode: increased overlay opacity for better text readability while still showing artwork */
-    background: light-dark(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background: light-dark(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
     opacity: 1;
     pointer-events: none; /* Never block pointer events */
 }
